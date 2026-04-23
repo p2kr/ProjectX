@@ -1,0 +1,87 @@
+HELP.md
+
+# --- Maven ---
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+dependency-reduced-pom.xml
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.properties.disabled
+release.properties
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+
+# --- Gradle (in case we add it later) ---
+.gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# --- Compiled artifacts ---
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+# --- Logs ---
+logs/
+*.log
+spring.log
+spring.log.*
+
+# --- Local config / secrets ---
+application-local.properties
+application-local.yml
+application-local.yaml
+application-secret*.properties
+application-secret*.yml
+*.env
+.env
+.env.*
+!.env.example
+
+# --- Embedded DBs (H2 / HSQL / Derby) ---
+*.db
+*.mv.db
+*.trace.db
+*.lck
+derby.log
+
+# --- IntelliJ ---
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# --- Eclipse / STS ---
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+
+# --- NetBeans ---
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# --- VS Code ---
+.vscode/
+
+# --- OS ---
+.DS_Store
+Thumbs.db

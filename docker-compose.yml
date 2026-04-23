@@ -1,0 +1,47 @@
+# Run the whole stack:
+#   docker compose up --build
+# Then open http://localhost:8081 (nginx -> /api -> backend:8080)
+#
+# Override the API host at build time:
+#   docker compose build --build-arg VITE_API_BASE_URL=/api frontend
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: projectx-backend:latest
+    container_name: projectx-backend
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SERVER_PORT=8080
+    ports:
+      - "8080:8080"          # exposed for direct curling; remove in prod
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/actuator/health | grep -q '\"status\":\"UP\"' || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - projectx-net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: /api
+    image: projectx-frontend:latest
+    container_name: projectx-frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "8081:80"
+    networks:
+      - projectx-net
+
+networks:
+  projectx-net:
+    driver: bridge

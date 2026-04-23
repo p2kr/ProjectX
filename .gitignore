@@ -1,0 +1,81 @@
+# --- OS ---
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# --- Editors / IDEs ---
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json.example
+.idea/
+*.iml
+*.iws
+*.ipr
+*.swp
+*.swo
+*~
+.history/
+.fleet/
+
+# --- Logs / temp ---
+logs/
+*.log
+*.pid
+*.seed
+*.tgz
+.cache/
+tmp/
+temp/
+
+# --- Env / secrets (NEVER commit) ---
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+secrets.*
+!secrets.*.example
+
+# --- Node / JS (covered in detail by frontend/.gitignore too) ---
+node_modules/
+dist/
+dist-ssr/
+.npm/
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
+# --- Java / Spring Boot (covered in detail by backend/.gitignore too) ---
+target/
+build/
+out/
+bin/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+
+# --- Coverage / test reports ---
+coverage/
+*.lcov
+.nyc_output/
+.jest/
+htmlcov/
+
+# --- Docker ---
+# Local-only compose overrides and named-volume mounts
+docker-compose.override.yml
+docker-compose.*.local.yml
+.docker/
+volumes/

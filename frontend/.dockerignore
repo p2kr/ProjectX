@@ -1,0 +1,47 @@
+# Frontend build context
+# Keep this minimal — anything copied here ends up in the build image.
+
+# Dependencies / build artifacts (re-installed/built inside the image)
+node_modules/
+dist/
+dist-ssr/
+build/
+.vite/
+.turbo/
+*.tsbuildinfo
+
+# Yarn cache
+.yarn/cache/
+.yarn/install-state.gz
+.pnp.*
+
+# Tests / coverage (test files themselves are kept so `tsc -b` doesn't break,
+# but the test run output and screenshots never need to ship)
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+cypress/videos/
+cypress/screenshots/
+vitest.config.ts.timestamp-*
+
+# Env (use --build-arg or runtime envs instead)
+.env
+.env.local
+.env.*.local
+
+# VCS / docs / editor / OS
+.git/
+.gitignore
+.gitattributes
+.github/
+README.md
+docs/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Don't bake the Dockerfile / dockerignore into the image
+Dockerfile
+.dockerignore

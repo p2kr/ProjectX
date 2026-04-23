@@ -1,0 +1,48 @@
+# Top-level .dockerignore — used when building from the repo root.
+# Per-service builds (./backend, ./frontend) also have their own .dockerignore.
+
+.git/
+.gitignore
+.gitattributes
+.github/
+.gitlab-ci.yml
+
+# Docs
+README.md
+docs/
+LICENSE*
+
+# Editors / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Node / JS
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/.vite/
+**/coverage/
+**/.yarn/cache/
+**/.yarn/install-state.gz
+**/.pnp.*
+
+# Java / Maven / Gradle
+**/target/
+**/build/
+**/out/
+**/.gradle/
+**/*.class
+
+# Env
+**/.env
+**/.env.*
+!**/.env.example
+
+# Docker / compose (don't ship into images)
+docker-compose*.yml
+**/Dockerfile*
+**/.dockerignore
